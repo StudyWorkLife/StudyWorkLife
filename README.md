@@ -4,11 +4,17 @@
 
 ---
 
-We're building Knowledge Infrastructure for the AI Era — The Second Brain for Every AI Agent. Build instantly, empowering any AI Agent to access your personal pluggable knowledge base.
+**The Second Brain for Every AI Agent**
+
+Build instantly, empowering any AI Agent to access your personal pluggable knowledge base.
 
 ---
 
-## What We Offer
+## Who We Are
+
+**Universal Knowledge Base Service for AI Agents**
+
+KBaaS — Knowledge Base as a Service
 
 **One-Click Build**
 Upload private documents and build a dedicated knowledge base. Get production-grade retrieval without complex setup.
@@ -80,7 +86,6 @@ Whether as a technical partner, investor, or advisor, feel free to reach out.
 Let's Build Together — Paving the Knowledge Highway for the AI Era
 
 Email: Hello@StudyWorkLife.com
-Website: https://studyworklife.com
 
 ---
 
@@ -98,11 +103,17 @@ MIT License - See [LICENSE](LICENSE) file for details
 
 ---
 
-我们正在构建面向 AI Agent 的通用知识库即服务 —— KBaaS。AI 时代的「第二大脑」，一键构建，让任何 AI Agent 都可以调用专属于你的可插拔式个人知识库。
+**AI 时代的「第二大脑」**
+
+一键构建，让任何 AI Agent 都可以调用专属于你的可插拔式个人知识库。
 
 ---
 
-## 我们提供什么
+## 我们是谁
+
+**面向 AI Agent 的通用知识库服务**
+
+KBaaS — 知识库即服务
 
 **一键构建**
 上传私有文档，构建专属知识库。无需复杂配置，即可拥有生产级知识检索能力。
@@ -174,16 +185,9 @@ KBaaS 将成为 AI 时代不可或缺的基础设施，我们有先发优势。
 期待与你一起——为 AI 时代铺设知识的高速公路
 
 邮箱：Hello@StudyWorkLife.com
-网站：https://studyworklife.com
 
 ---
 
 ## 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
-
----
-
-## Website
-
-Official Website: https://studyworklife.com
