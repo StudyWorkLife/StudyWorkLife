@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudyWorkLife.com - AI时代的知识基础设施，为全球AI Agent提供标准化、可跨平台调用的知识库API">
+  <title data-i18n="title">StudyWorkLife.com | AI 知识基础设施</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.cn">
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+  <link href="https://fonts.googleapis.cn/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+/* ============================================
+   StudyWorkLife.com - Professional Design v4
+   Clean | Modern | Premium
+   ============================================ */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --bg-dark: #0f172a;
+  --bg-card: #ffffff;
+  
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-inverse: #f8fafc;
+  
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  
+  --accent: #0891b2;
+  --accent-light: #06b6d4;
+  
+  --study: #7c3aed;
+  --work: #ea580c;
+  --life: #059669;
+  
+  --border: #e2e8f0;
+  --border-dark: #334155;
+  
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
+  --gradient-section: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  --gradient-contact: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+
+  --font: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --section-py: clamp(80px, 10vw, 120px);
+  --container: 1200px;
+  --gap: clamp(20px, 4vw, 40px);
+  
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+  
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 0.25s;
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+svg { display: block; }
+
+/* Container */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 14px 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.logo-ext {
+  color: var(--primary);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration) var(--ease);
+}
+
+.nav a svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav a:hover {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.nav-text {
+  display: inline;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+  margin: 0 8px;
+}
+
+.lang-toggle {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration) var(--ease);
+}
+
+.lang-toggle:hover {
+  color: var(--text);
+}
+
+.lang-toggle.active {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.lang-sep {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.mobile-menu-btn {
+  display: none;
+  padding: 8px;
+  color: var(--text);
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 80px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 70% 60%, rgba(8, 145, 178, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 50% 80%, rgba(37, 99, 235, 0.04) 0%, transparent 50%);
+  animation: gradientShift 12s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  33% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  66% {
+    opacity: 0.9;
+    transform: scale(0.95);
+  }
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: var(--radius-full);
+  margin-bottom: 32px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all var(--duration) var(--ease);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Hero Domains */
+.hero-domains {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.domains-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.domains-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.domains-links a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration) var(--ease);
+}
+
+.domains-links a:hover {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.domain-sep {
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+/* Section Base */
+.section {
+  padding: var(--section-py) 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-dark {
+  background: var(--gradient-section);
+  color: var(--text-inverse);
+}
+
+.section-gradient {
+  background: var(--gradient-contact);
+  color: var(--text-inverse);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.section-tag svg {
+  width: 16px;
+  height: 16px;
+}
+
+.section-tag.gold {
+  color: #f59e0b;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.section-dark .section-sub,
+.section-gradient .section-sub {
+  color: var(--text-light);
+}
+
+/* Vision Section */
+.vision-section {
+  padding: var(--section-py) 0;
+  background: var(--bg-alt);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.vision-card {
+  display: flex;
+  gap: 20px;
+  padding: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration) var(--ease);
+}
+
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: var(--radius);
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--primary);
+}
+
+.card-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Platform */
+.platform-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.platform-item {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 48px;
+  align-items: center;
+  padding: 40px 48px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration) var(--ease);
+}
+
+.platform-item.reverse {
+  grid-template-columns: 240px 1fr;
+}
+
+.platform-item.reverse .platform-info {
+  order: 2;
+  text-align: right;
+}
+
+.platform-item.reverse .platform-info .platform-header {
+  flex-direction: row-reverse;
+}
+
+.platform-item.reverse .platform-info .platform-name {
+  flex-direction: row-reverse;
+}
+
+.platform-item.reverse .platform-info .platform-tags {
+  justify-content: flex-end;
+}
+
+.platform-item.reverse .platform-illustration {
+  order: 1;
+}
+
+.platform-item:hover {
+  box-shadow: var(--shadow);
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.platform-num {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+.platform-icon {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: var(--radius);
+}
+
+.platform-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: white;
+}
+
+.platform-icon.study {
+  background: var(--study);
+}
+
+.platform-icon.work {
+  background: var(--work);
+}
+
+.platform-icon.life {
+  background: var(--life);
+}
+
+.platform-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.platform-name a {
+  color: var(--text);
+}
+
+.platform-name a:hover {
+  color: var(--primary);
+}
+
+.ext-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.4;
+}
+
+.platform-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.platform-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.platform-tags li {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-alt);
+  border-radius: var(--radius-full);
+}
+
+.platform-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platform-illustration svg {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
+
+.platform-illustration.study svg {
+  color: var(--study);
+}
+
+.platform-illustration.work svg {
+  color: var(--work);
+}
+
+.platform-illustration.life svg {
+  color: var(--life);
+}
+
+/* Domains Section */
+.domains-showcase {
+  margin-bottom: 56px;
+}
+
+.domain-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 48px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(8, 145, 178, 0.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.domain-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.domain-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.domain-value {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.tld {
+  color: var(--primary);
+}
+
+.domain-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+}
+
+.domain-sub-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.domain-subs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.domain-subs a {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  transition: all var(--duration) var(--ease);
+}
+
+.domain-subs a:hover {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.domain-subs .dot {
+  color: var(--text-light);
+}
+
+.domain-subs .sep {
+  font-size: 18px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+/* Domains Text */
+.domains-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+}
+
+.text-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.text-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--primary);
+}
+
+.text-item p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Reasons */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.reason-card {
+  position: relative;
+  padding: 36px 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration) var(--ease);
+}
+
+.reason-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.reason-icon {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: rgba(37, 99, 235, 0.15);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+
+.reason-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--accent-light);
+}
+
+.reason-num {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.06);
+  line-height: 1;
+}
+
+.reason-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.reason-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.partner-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 36px 48px;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.cta-icon {
+  width: 32px;
+  height: 32px;
+  stroke: var(--accent-light);
+}
+
+.partner-cta p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+}
+
+/* Contact */
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contact-sub {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 40px;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
+  border-radius: var(--radius);
+  transition: all var(--duration) var(--ease);
+}
+
+.contact-email:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+}
+
+.contact-email svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer */
+.footer {
+  padding: 48px 0 32px;
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-tag {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.footer-links {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-links a {
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--text-light);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration) var(--ease);
+}
+
+.footer-links a:hover {
+  color: var(--text-inverse);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .platform-item,
+  .platform-item.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .platform-item.reverse .platform-info,
+  .platform-item.reverse .platform-illustration {
+    order: unset;
+  }
+  
+  .platform-illustration {
+    order: -1;
+  }
+  
+  .reasons {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .hero {
+    padding-top: 80px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .section-header {
+    margin-bottom: 48px;
+  }
+  
+  .vision-card {
+    padding: 24px;
+  }
+  
+  .platform-item {
+    padding: 28px 24px;
+  }
+  
+  .domain-block {
+    padding: 32px 24px;
+  }
+  
+  .domain-subs {
+    gap: 8px;
+  }
+  
+  .domain-subs .sep {
+    display: none;
+  }
+  
+  .partner-cta {
+    flex-direction: column;
+    padding: 28px 24px;
+  }
+  
+  .footer-inner {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-domains {
+    margin-top: 48px;
+  }
+  
+  .domains-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .domain-sep {
+    display: none;
+  }
+  
+  .platform-tags {
+    gap: 8px;
+  }
+  
+  .platform-tags li {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        <span class="logo-text">StudyWorkLife<span class="logo-ext">.com</span></span>
+      </a>
+      <nav class="nav">
+        <a href="#vision" data-i18n="nav.vision">愿景</a>
+        <a href="#platform" data-i18n="nav.platform">平台</a>
+        <a href="#domains" data-i18n="nav.domains">域名</a>
+        <a href="#partner" data-i18n="nav.partner">合伙人</a>
+        <a href="#contact" data-i18n="nav.contact">联系</a>
+        <div class="nav-divider"></div>
+        <button class="lang-toggle active" data-lang="en">EN</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-toggle" data-lang="zh">中文</button>
+      </nav>
+      <button class="mobile-menu-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-badge" data-i18n="hero.badge">
+        AI 知识基础设施
+      </div>
+      <h1 class="hero-title" data-i18n="hero.title">
+        AI 时代的「第二大脑」
+      </h1>
+      <p class="hero-desc" data-i18n="hero.desc">
+        让每一个AI Agent都能拥有专属、可插拔的知识库
+      </p>
+      <div class="hero-cta">
+        <a href="#vision" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span data-i18n="hero.cta1">探索平台</span>
+        </a>
+        <a href="#partner" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          <span data-i18n="hero.cta2">成为合伙人</span>
+        </a>
+      </div>
+      <div class="hero-domains">
+        <span class="domains-label" data-i18n="hero.domain.label">核心域名</span>
+        <div class="domains-links">
+          <a href="https://StudyWorkLife.com" target="_blank">StudyWorkLife.com</a>
+          <span class="domain-sep">|</span>
+          <a href="https://about.study" target="_blank">About.Study</a>
+          <span class="domain-sep">|</span>
+          <a href="https://about.work" target="_blank">About.Work</a>
+          <span class="domain-sep">|</span>
+          <a href="https://about.life" target="_blank">About.Life</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section id="vision" class="section vision-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span data-i18n="vision.tag">我们是谁</span>
+        </span>
+        <h2 class="section-title" data-i18n="vision.title">面向AI Agent的通用知识库即服务</h2>
+        <p class="section-sub" data-i18n="vision.sub">KBaaS — 面向AI Agent的通用知识库服务</p>
+      </div>
+      
+      <div class="vision-grid">
+        <div class="vision-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="card-content">
+            <h3 data-i18n="vision.c1.t">一键构建</h3>
+            <p data-i18n="vision.c1.d">上传私有文档，构建专属知识库。无需复杂配置，即可拥有生产级知识检索能力。</p>
+          </div>
+        </div>
+        <div class="vision-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <div class="card-content">
+            <h3 data-i18n="vision.c2.t">即时订阅</h3>
+            <p data-i18n="vision.c2.d">一键订阅平台公共知识库，涵盖学习·工作·生活三大领域，持续更新。</p>
+          </div>
+        </div>
+        <div class="vision-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="card-content">
+            <h3 data-i18n="vision.c3.t">API接入</h3>
+            <p data-i18n="vision.c3.d">通过RESTful API或MCP协议，让任何AI应用随时拉取知识上下文。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform -->
+  <section id="platform" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span data-i18n="platform.tag">核心平台</span>
+        </span>
+        <h2 class="section-title" data-i18n="platform.title">三大垂直知识库</h2>
+      </div>
+      
+      <div class="platform-list">
+        <div class="platform-item">
+          <div class="platform-info">
+            <div class="platform-header">
+              <span class="platform-num">01</span>
+              <div class="platform-icon study">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+            </div>
+            <h3 class="platform-name">
+              <a href="https://about.study" target="_blank">About.Study</a>
+              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </h3>
+            <p class="platform-desc" data-i18n="platform.study.d">学术文献、专业课程、技能培训——构建AI的专业知识体系</p>
+            <ul class="platform-tags">
+              <li data-i18n="platform.study.t1">教育课程</li>
+              <li data-i18n="platform.study.t2">专业认证</li>
+              <li data-i18n="platform.study.t3">技能培训</li>
+            </ul>
+          </div>
+          <div class="platform-illustration study">
+            <svg viewBox="0 0 120 100" fill="none">
+              <rect x="15" y="20" width="50" height="65" rx="4" stroke="currentColor" stroke-width="2"/>
+              <rect x="25" y="30" width="50" height="65" rx="4" stroke="currentColor" stroke-width="2"/>
+              <rect x="35" y="10" width="50" height="65" rx="4" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/>
+              <line x1="45" y1="30" x2="75" y2="30" stroke="currentColor" stroke-width="2"/>
+              <line x1="45" y1="42" x2="70" y2="42" stroke="currentColor" stroke-width="2"/>
+              <line x1="45" y1="54" x2="65" y2="54" stroke="currentColor" stroke-width="2"/>
+              <circle cx="90" cy="60" r="20" stroke="currentColor" stroke-width="2"/>
+              <path d="M90 48v24M78 60h24" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="platform-item reverse">
+          <div class="platform-info">
+            <div class="platform-header">
+              <span class="platform-num">02</span>
+              <div class="platform-icon work">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v4"/><path d="M8 12v4"/><path d="M16 12v4"/></svg>
+              </div>
+            </div>
+            <h3 class="platform-name">
+              <a href="https://about.work" target="_blank">About.Work</a>
+              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </h3>
+            <p class="platform-desc" data-i18n="platform.work.d">企业文档、行业标准、职业技能——让AI成为工作得力助手</p>
+            <ul class="platform-tags">
+              <li data-i18n="platform.work.t1">企业知识</li>
+              <li data-i18n="platform.work.t2">行业标准</li>
+              <li data-i18n="platform.work.t3">职业发展</li>
+            </ul>
+          </div>
+          <div class="platform-illustration work">
+            <svg viewBox="0 0 120 100" fill="none">
+              <rect x="10" y="25" width="100" height="60" rx="4" stroke="currentColor" stroke-width="2"/>
+              <rect x="20" y="35" width="45" height="30" rx="2" stroke="currentColor" stroke-width="2"/>
+              <rect x="75" y="35" width="25" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+              <rect x="75" y="55" width="25" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+              <line x1="25" y1="48" x2="55" y2="48" stroke="currentColor" stroke-width="2"/>
+              <line x1="25" y1="55" x2="45" y2="55" stroke="currentColor" stroke-width="2"/>
+              <circle cx="42" cy="43" r="8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="platform-item">
+          <div class="platform-info">
+            <div class="platform-header">
+              <span class="platform-num">03</span>
+              <div class="platform-icon life">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+            <h3 class="platform-name">
+              <a href="https://about.life" target="_blank">About.Life</a>
+              <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </h3>
+            <p class="platform-desc" data-i18n="platform.life.d">生活方式、健康指南、兴趣百科——赋予AI生活智慧</p>
+            <ul class="platform-tags">
+              <li data-i18n="platform.life.t1">生活百科</li>
+              <li data-i18n="platform.life.t2">健康养生</li>
+              <li data-i18n="platform.life.t3">兴趣爱好</li>
+            </ul>
+          </div>
+          <div class="platform-illustration life">
+            <svg viewBox="0 0 120 100" fill="none">
+              <circle cx="60" cy="50" r="35" stroke="currentColor" stroke-width="2"/>
+              <circle cx="60" cy="50" r="25" stroke="currentColor" stroke-width="2"/>
+              <circle cx="60" cy="50" r="12" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.15"/>
+              <path d="M60 25v50M25 50h70" stroke="currentColor" stroke-width="2"/>
+              <path d="M38 38l44 24M38 62l44-24" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domains Value -->
+  <section id="domains" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span data-i18n="domains.tag">域名资产</span>
+        </span>
+        <h2 class="section-title" data-i18n="domains.title">域名即品牌</h2>
+        <p class="section-sub" data-i18n="domains.sub">一套近乎完美的叙事资产组合</p>
+      </div>
+      
+      <div class="domains-showcase">
+        <div class="domain-block">
+          <div class="domain-main">
+            <span class="domain-label" data-i18n="domains.main.label">主站</span>
+            <span class="domain-value">StudyWorkLife<span class="tld">.com</span></span>
+          </div>
+          <div class="domain-divider"></div>
+          <div class="domain-sub-list">
+            <span class="domain-label" data-i18n="domains.sub.label">垂直子站</span>
+            <div class="domain-subs">
+              <a href="https://about.study" target="_blank">About<span class="dot">.</span>Study</a>
+              <span class="sep">·</span>
+              <a href="https://about.work" target="_blank">About<span class="dot">.</span>Work</a>
+              <span class="sep">·</span>
+              <a href="https://about.life" target="_blank">About<span class="dot">.</span>Life</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="domains-text">
+        <div class="text-item">
+          <div class="text-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+          </div>
+          <p data-i18n="domains.p1">StudyWorkLife.com 直接定义知识库三大核心场景，用户心智占领成本极低。</p>
+        </div>
+        <div class="text-item">
+          <div class="text-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <p data-i18n="domains.p2">三个垂直子域为未来API端点划分与品牌独立运营预留巨大空间。</p>
+        </div>
+        <div class="text-item">
+          <div class="text-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <p data-i18n="domains.p3">对API服务平台而言，域名就是品牌，域名就是流量，域名就是护城河。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner -->
+  <section id="partner" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span data-i18n="partner.tag">合伙人招募</span>
+        </span>
+        <h2 class="section-title" data-i18n="partner.title">为什么是现在？</h2>
+      </div>
+      
+      <div class="reasons">
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="reason-num">01</span>
+          <h3 data-i18n="partner.r1.t">稀缺性窗口</h3>
+          <p data-i18n="partner.r1.d">域名资产具有稀缺性，好的叙事型域名一旦被占用，再无替代。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+          </div>
+          <span class="reason-num">02</span>
+          <h3 data-i18n="partner.r2.t">生态成熟期</h3>
+          <p data-i18n="partner.r2.d">AI Agent生态正快速成熟，知识库中间层必将出现头部玩家。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <span class="reason-num">03</span>
+          <h3 data-i18n="partner.r3.t">基础设施层</h3>
+          <p data-i18n="partner.r3.d">KBaaS将成为AI时代不可或缺的基础设施，我们有先发优势。</p>
+        </div>
+      </div>
+      
+      <div class="partner-cta">
+        <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        <p data-i18n="partner.cta">无论你是技术合伙人、投资人，还是想提供建议，都欢迎联系。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-gradient">
+    <div class="container">
+      <div class="contact-content">
+        <h2 class="contact-title" data-i18n="contact.title">期待与你一起</h2>
+        <p class="contact-sub" data-i18n="contact.sub">为AI时代铺设知识的高速公路</p>
+        <a href="mailto:Hello@StudyWorkLife.com" class="contact-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Hello@StudyWorkLife.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-name">StudyWorkLife.com</span>
+          <span class="footer-tag" data-i18n="footer.tag">AI知识基础设施</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://StudyWorkLife.com" target="_blank">Home</a>
+          <a href="https://about.study" target="_blank">About.Study</a>
+          <a href="https://about.work" target="_blank">About.Work</a>
+          <a href="https://about.life" target="_blank">About.Life</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2025 StudyWorkLife.com. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+(function() {
+  'use strict';
+  
+  // 清除旧的缓存，强制使用默认英文
+  if (localStorage.getItem('swl-lang') === 'zh') {
+    localStorage.removeItem('swl-lang');
+  }
+
+  const i18n = {
+    zh: {
+      'nav.vision': '愿景',
+      'nav.platform': '平台',
+      'nav.domains': '域名',
+      'nav.partner': '合伙人',
+      'nav.contact': '联系',
+      'hero.badge': 'AI 知识基础设施',
+      'hero.title': 'AI 时代的「第二大脑」',
+      'hero.desc': '一键构建，让任何 AI Agent 都可以调用专属于你的可插拔式个人知识库',
+      'hero.cta1': '探索平台',
+      'hero.cta2': '成为合伙人',
+      'hero.domain.label': '核心域名',
+      'vision.tag': '我们是谁',
+      'vision.title': '面向 AI Agent 的通用知识库服务',
+      'vision.sub': 'KBaaS — 知识库即服务',
+      'vision.c1.t': '一键构建',
+      'vision.c1.d': '上传私有文档，构建专属知识库。无需复杂配置，即可拥有生产级知识检索能力。',
+      'vision.c2.t': '即时订阅',
+      'vision.c2.d': '一键订阅平台公共知识库，涵盖学习·工作·生活三大领域，持续更新。',
+      'vision.c3.t': 'API 接入',
+      'vision.c3.d': '通过 RESTful API 或 MCP 协议，让任何 AI 应用随时拉取知识上下文。',
+      'platform.tag': '核心平台',
+      'platform.title': '三大垂直知识库',
+      'platform.study.d': '学术文献、专业课程、技能培训——构建 AI 的专业知识体系',
+      'platform.study.t1': '教育课程',
+      'platform.study.t2': '专业认证',
+      'platform.study.t3': '技能培训',
+      'platform.work.d': '企业文档、行业标准、职业技能——让 AI 成为工作得力助手',
+      'platform.work.t1': '企业知识',
+      'platform.work.t2': '行业标准',
+      'platform.work.t3': '职业发展',
+      'platform.life.d': '生活方式、健康指南、兴趣百科——赋予 AI 生活智慧',
+      'platform.life.t1': '生活百科',
+      'platform.life.t2': '健康养生',
+      'platform.life.t3': '兴趣爱好',
+      'domains.tag': '域名资产',
+      'domains.title': '域名即品牌',
+      'domains.sub': '一套近乎完美的叙事资产组合',
+      'domains.main.label': '主站',
+      'domains.sub.label': '垂直子站',
+      'domains.p1': 'StudyWorkLife.com 直接定义知识库三大核心场景，用户心智占领成本极低。',
+      'domains.p2': '三个垂直子域为未来 API 端点划分与品牌独立运营预留巨大空间。',
+      'domains.p3': '对 API 服务平台而言，域名就是品牌，域名就是流量，域名就是护城河。',
+      'partner.tag': '合伙人招募',
+      'partner.title': '为什么是现在？',
+      'partner.r1.t': '稀缺性窗口',
+      'partner.r1.d': '域名资产具有稀缺性，好的叙事型域名一旦被占用，再无替代。',
+      'partner.r2.t': '生态成熟期',
+      'partner.r2.d': 'AI Agent 生态正快速成熟，知识库中间层必将出现头部玩家。',
+      'partner.r3.t': '基础设施层',
+      'partner.r3.d': 'KBaaS 将成为 AI 时代不可或缺的基础设施，我们有先发优势。',
+      'partner.cta': '无论你是技术合伙人、投资人，还是想提供建议，都欢迎联系。',
+      'contact.title': '期待与你一起',
+      'contact.sub': '为 AI 时代铺设知识的高速公路',
+      'footer.tag': 'AI 知识基础设施',
+      'title': 'StudyWorkLife.com | AI 知识基础设施'
+    },
+    en: {
+      'nav.vision': 'Vision',
+      'nav.platform': 'Platform',
+      'nav.domains': 'Domains',
+      'nav.partner': 'Partner',
+      'nav.contact': 'Contact',
+      'hero.badge': 'Knowledge Infrastructure for AI',
+      'hero.title': 'The Second Brain for Every AI Agent',
+      'hero.desc': 'Build instantly, empowering any AI Agent to access your personal pluggable knowledge base',
+      'hero.cta1': 'Explore Platform',
+      'hero.cta2': 'Become a Partner',
+      'hero.domain.label': 'Core Domains',
+      'vision.tag': 'Who We Are',
+      'vision.title': 'Universal Knowledge Base Service for AI Agents',
+      'vision.sub': 'KBaaS — Knowledge Base as a Service',
+      'vision.c1.t': 'One-Click Build',
+      'vision.c1.d': 'Upload private documents and build a dedicated knowledge base. Get production-grade retrieval without complex setup.',
+      'vision.c2.t': 'Instant Subscribe',
+      'vision.c2.d': 'Subscribe to public knowledge bases covering Study, Work, and Life with continuous updates.',
+      'vision.c3.t': 'API Access',
+      'vision.c3.d': 'Through RESTful API or MCP protocol, any AI app can pull knowledge context anytime.',
+      'platform.tag': 'Core Platform',
+      'platform.title': 'Three Vertical Knowledge Bases',
+      'platform.study.d': 'Academic literature, professional courses, skill training — building AI\'s professional knowledge system',
+      'platform.study.t1': 'Courses',
+      'platform.study.t2': 'Certifications',
+      'platform.study.t3': 'Training',
+      'platform.work.d': 'Corporate docs, industry standards, professional skills — making AI your work assistant',
+      'platform.work.t1': 'Knowledge Mgmt',
+      'platform.work.t2': 'Standards',
+      'platform.work.t3': 'Career',
+      'platform.life.d': 'Lifestyle, health guides, hobby encyclopedias — giving AI life wisdom',
+      'platform.life.t1': 'Encyclopedia',
+      'platform.life.t2': 'Health',
+      'platform.life.t3': 'Hobbies',
+      'domains.tag': 'Domain Assets',
+      'domains.title': 'Domain IS Brand',
+      'domains.sub': 'A near-perfect narrative asset portfolio',
+      'domains.main.label': 'Main Site',
+      'domains.sub.label': 'Vertical Sites',
+      'domains.p1': 'StudyWorkLife.com directly defines three core knowledge scenarios with minimal cognitive cost.',
+      'domains.p2': 'Three sub-domains provide huge space for future API endpoints and brand independence.',
+      'domains.p3': 'For API platforms, domain is brand, domain is traffic, domain is moat.',
+      'partner.tag': 'Partner Recruitment',
+      'partner.title': 'Why Now?',
+      'partner.r1.t': 'Scarcity Window',
+      'partner.r1.d': 'Domain assets are scarce. Once occupied, good narrative domains have no replacement.',
+      'partner.r2.t': 'Ecosystem Maturity',
+      'partner.r2.d': 'AI Agent ecosystem is maturing rapidly. Knowledge base middleware will see top players emerge.',
+      'partner.r3.t': 'Infrastructure Layer',
+      'partner.r3.d': 'KBaaS will become essential AI infrastructure. We have first-mover advantage.',
+      'partner.cta': 'Whether as a technical partner, investor, or advisor, feel free to reach out.',
+      'contact.title': 'Let\'s Build Together',
+      'contact.sub': 'Paving the Knowledge Highway for the AI Era',
+      'footer.tag': 'AI Knowledge Infrastructure',
+      'title': 'StudyWorkLife.com | Knowledge Infrastructure for AI'
+    }
+  };
+
+  // Language Switch
+  function initLang() {
+    const btns = document.querySelectorAll('.lang-toggle');
+    let lang = localStorage.getItem('swl-lang') || 'en';
+
+    function setLang(l) {
+      lang = l;
+      localStorage.setItem('swl-lang', l);
+      document.body.classList.toggle('en', l === 'en');
+      document.documentElement.lang = l === 'en' ? 'en' : 'zh-CN';
+      
+      btns.forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (i18n[l] && i18n[l][key]) {
+          el.textContent = i18n[l][key];
+        }
+      });
+      
+      // 更新页面标题
+      const badge = i18n[l]['hero.badge'];
+      const title = i18n[l]['hero.title'];
+      const desc = i18n[l]['hero.desc'];
+      document.title = 'StudyWorkLife.com | ' + badge + ' | ' + title;
+    }
+
+    setLang(lang);
+    btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  }
+
+  // Scroll Reveal
+  function initReveal() {
+    const els = document.querySelectorAll('.vision-card, .platform-item, .reason-card, .domain-block, .text-item');
+    els.forEach(e => e.classList.add('reveal'));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(e => obs.observe(e));
+  }
+
+  // Smooth Scroll
+  function initScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initLang();
+    initReveal();
+    initScroll();
+  });
+})();
+  </script>
+</body>
+</html>
